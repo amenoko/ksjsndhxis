@@ -1,0 +1,293 @@
+/* !important is necessary for stylus extension on mobile firefox for a lot of attributes */
+
+@import url('https://fonts.googleapis.com/css2?family=Klee+One&display=swap');
+
+/* bunch of other fonts to try out
+
+@import url('https://fonts.googleapis.com/css2?family=DotGothic16&family=Klee+One&family=New+Tegomin&family=Yuji+Boku&family=Yuji+Mai&family=Yuji+Syuku&family=Zen+Kurenaido&display=swap');
+
+Yuji Mai
+Yuji Syuku
+DotGothic16
+Zen Kurenaido
+Yuji Boku
+New Tegomin
+*/
+
+@font-face {
+  font-family: brw;
+  src: url('https://amenoko.github.io/ksjsndhxis/BRWakaisho-Regular.ttf') format('truetype');
+}
+
+:root {
+--accent: #81bfdc;
+--bg1: #1c1c22;
+--bg2: #202026;
+--fg1: #dddddf;
+--fg2: #88888c;
+background-color: var(--bg1);
+--gradient: linear-gradient(90deg, rgba(28,28,31,1) 0%, rgba(68,68,73,1) 50%, rgba(28,28,31,1) 100%);
+}
+
+/* some elements aren't affected by * so have to add them explicitly */
+*, h4, .japanese, .english, .label {
+ font-family: brw !important;
+}
+
+
+body {
+ background-color: var(--bg1);
+ transition: all 0.5s;
+ color: var(--fg1);
+ zoom:100%;
+}
+
+/* links and manual link fixes */
+a {
+ color:var(--accent) !important;
+ opacity:unset !important;
+ text-decoration:unset !important;
+ border: unset !important;
+}
+a:hover {
+ color:var(--accent);
+ text-decoration:underline;
+}
+.literal_block a {
+ color:unset !important;
+}
+
+/* unset bg color of elements that hard-code a white bg */
+header, .main, .inner, a, .submit, ul.radical_table, .fact, .input_methods, input {
+ background-color:unset !important;
+ background:unset;
+}
+
+/* fix bg color of popups/dropdowns so they're not transparent */
+.overlay, #input_methods {
+ background-color: var(--bg2) !important;
+}
+
+/* unset fg color of elements that hard-code a bad/dark fg */
+h4, h2, .input_methods, .search_type, .icon, .radical, .character, .fact, h6, .input_methods, input {
+ color:unset !important;
+}
+
+/* fix fg color of leftovers */
+input, svg, .result_label {
+ color: var(--fg1);
+ fill: var(--fg1);
+}
+
+/* fg darker texts */
+.result_count, .info, .supplemental_info, .meaning-tags, .meaning-abstract, .meaning-definition-section_divider, .concept_light-meanings .sentences, .minor-text {
+ color:var(--fg2);
+}
+
+/* invert top left icon */
+.logo a {
+background-image: url("https://assets.jisho.org/assets/jisho-logo-v4-dark@2x-e676613b426d34187b61928823730a225b52165aaef99f948bd3dc5fc16fa787.png");
+filter: hue-rotate(70deg) grayscale(0.5);
+}
+
+/* make labels readable (common word etc) */
+.label, .label a {
+ color: var(--bg1) !important;
+}
+
+/* borders */
+form.search .search_type, .concept_light, .kanji_light, .sentence, #handwriting_button, #radical_button, .fact {
+ border-color: var(--accent);
+ border-width: 1px;
+ outline:none;
+}
+
+
+/* search field border */
+form.search .overlay {
+ border: solid 1px var(--accent);
+}
+
+/* border-radius for everyone */
+form.search .overlay, .f-dropdown, .color_theme_picker--choices, .panel, .fact, .radical, .kanji_strokes, #inflection_modal, #input_methods {
+ border-radius: 5px;
+}
+
+/* manual fixes for dropdown menu */
+.f-dropdown, .color_theme_picker--choices {
+ background-color: var(--bg1);
+ border-color: var(--accent);
+}
+.f-dropdown li:hover, .color_theme_picker--wrapper {
+ background-color:unset;
+}
+
+/* manual fixes for draw */
+.panel {
+ background-color: var(--fg1);
+ box-shadow:inset 0px 0px 10px var(--bg1);
+
+}
+
+.buttons button {
+ background-color:var(--bg1);
+ color:var(--fg1);
+}
+.buttons button:hover {
+ background-color: #29292f;
+ color:white;
+}
+
+/* manual fixes for radical table */
+.radical-image {
+ background-image:none !important;
+}
+.radical.selected {
+ background-color:unset;
+ border: 1px solid var(--accent);
+}
+li.radical:hover {
+ background-color:var(--accent);
+ color:var(--bg1);
+}
+
+/* manual fixes for draw/radicals icons hover */
+#radical_button, #handwriting_button {
+ border-bottom-style: solid;
+ border-color: rgb(0,0,0,0) !important;
+}
+#radical_button:hover, #handwriting_button:hover {
+ background-color:unset;
+ border-color: var(--accent) !important;
+}
+
+/*mobile (portrait mode) draw/radical buttons */
+/*#input_methods {
+  box-shadow: 0px 0px 20px black;
+  zoom: 90%;
+  margin:15px;
+  padding:5px;
+}*/
+
+/* manual fix for kanji animation */
+.kanji_play_button {
+ background:none;
+}
+.play-circle-icon, .settings-icon, .play-icon, .replay_button {
+ fill:red;
+ fill-opacity: 0.6;
+}
+.kanji_strokes {
+ padding: 5px;
+ background-color:var(--fg1);
+ box-shadow:inset 0px 0px 10px var(--bg1);
+}
+
+/* mobile radical search scrollbar background */
+.scroll_indicator {
+  background: -webkit-linear-gradient(left, rgb(0,0,0,0), var(--bg2)) !important;
+}
+
+/* LAYOUT CHANGES */
+/* hide stuff to tidy up */
+header, #other_dictionaries, .kanji_light_block h4, .sentences_block h4, .names_block h4, .exact_block h4  {
+ display:none;
+}
+/* fix entire search bar to the top */
+.row.collapse {
+ position:fixed;
+ top:0px;
+ left:0px;
+ margin:0px;
+ padding: 0px 20px 0px 20px;
+ max-width:unset;
+ /*background-color: var(--bg2);*/
+ z-index:1;
+ /*box-shadow: 0px 0px 20px black;*/
+}
+/* fix overlap at the top when doing the previous thing */
+body {
+ margin-top: 80px;
+}
+#secondary {
+ width:unset;
+ float:unset;
+ position:static;
+ order:1;
+ display:contents;
+}
+#primary {
+ max-width:unset;
+ width:100%;
+ order:2;
+}
+#main_results .row {
+  display:flex;
+  flex-direction:column;
+}
+.kanji_light_block {
+ display:flex;
+ flex-direction:column;
+ width:100%;
+ margin:0px;
+}
+/* compact sentences and names with hover */
+.sentences_block, .names_block {
+  order:4;
+}
+
+
+.kanji_light_block .entry { 
+ width:100%;
+ margin:5px;
+}
+.concept_light {
+ margin: 15px 0px 15px 0px;
+}
+.row {
+ max-width:unset;
+}
+/* fix the ~5px of bottom of drawing panel cut off */
+.inputs {
+ max-height:unset;
+}
+
+/* fix inflection popup */
+body:has(.show_inflection_table:hover) #inflection_modal {
+ display: block !important;
+ visibility:visible !important;
+}
+#inflection_modal {
+ position:fixed !important;
+ border:none;
+ background-color:var(--bg2);
+ padding:15px 0px 15px 0px;
+ right:0px;
+ box-shadow: 0px 0px 20px black;
+}
+
+#inflection_modal * {
+ background-color:inherit;
+ color: var(--fg1);
+}
+
+/* have input methods icon always float bottom right (not just mobile mode) for convenience */
+#input_methods {
+  position:fixed;
+  bottom:0px;
+  right: 0px;
+  margin:0px;
+  padding:5px;
+  border-left-style: solid;
+  border-top-style: solid;
+  border-width: 1px;
+  border-color: var(--accent);
+  border-top-right-radius: unset;
+  border-bottom-left-radius: unset;
+  
+}
+
+/* bar that appears if there's multiple search terms or "this looks like an inflection of [verb]"; takes up too much space */
+#zen_bar {
+  margin:0px;
+}
