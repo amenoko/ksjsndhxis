@@ -294,14 +294,7 @@ color: var(--fg1);
  }
 
 /* bar that appears if there's multiple search terms or "this looks like an inflection of [verb]"; takes up too much space */
-#zen_bar {
- margin:0px;
-}
+#zen_bar { margin:0px;}
 
-/* arrange kanji entries into two columns to make better use of space */
-.concept_light {
- display: flex;
-}
-.columns.zero-padding {
- width:auto;
-}
+/* force kanji entries to 2-column regardless of window width */
+.concept_light-wrapper { width: 25%; }
