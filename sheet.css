@@ -69,7 +69,7 @@ background-color: var(--bg2) !important;
 }
 
 /* unset fg color of elements that hard-code a bad/dark fg */
-h4, h2, .input_methods, .search_type, .icon, .radical, .character, .fact, h6, .input_methods, input {
+h2, h3, h4, h5, h6, .input_methods, .search_type, .icon, .radical, .character, .fact, .input_methods, input {
 color:unset !important;
 }
 
