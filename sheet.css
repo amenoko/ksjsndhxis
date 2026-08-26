@@ -96,7 +96,7 @@ color: var(--bg1) !important;
 }
 
 /* borders */
-form.search .search_type, .concept_light, .kanji_light, .sentence, #handwriting_button, #radical_button, .fact {
+form.search .search_type, .concept_light, .kanji_light, .sentence, #handwriting_button, #radical_button, .fact, .sentences_block .sentence {
 border-color: var(--accent);
 border-width: 1px;
 outline:none;
