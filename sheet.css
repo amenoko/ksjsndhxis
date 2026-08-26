@@ -298,4 +298,4 @@ color: var(--fg1);
 
 /* force kanji entries to 2-column regardless of window width */
 .concept_light-wrapper { width: 25%; }
-.concept_light-meanings.columns { float:unset; }
+.concept_light-meanings.columns { float:unset; width:unset;}
