@@ -298,4 +298,10 @@ color: var(--fg1);
  margin:0px;
 }
 
-
+/* arrange kanji entries into two columns to make better use of space */
+.concept_light {
+ display: flex;
+}
+.columns.zero-padding {
+ width:auto;
+}
