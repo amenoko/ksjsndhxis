@@ -185,7 +185,7 @@ box-shadow:inset 0px 0px 10px var(--bg1);
 /*header, #other_dictionaries, .kanji_light_block h4, .sentences_block h4, .names_block h4, .exact_block h4  {
 display:none;
 }*/
-header, #other_dictionaries, .kanji_light_block h4, .exact_block h4, .light-details_link  {
+header, #other_dictionaries, .kanji_light_block h4, .exact_block h4, .concepts h4, .light-details_link  {
 display:none;
 }
 
