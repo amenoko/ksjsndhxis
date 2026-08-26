@@ -1,3 +1,5 @@
+/*@import url('https://raw.githubusercontent.com/amenoko/ksjsndhxis/refs/heads/main/sheet.css')*/
+
 /* !important is necessary for stylus extension on mobile firefox for a lot of attributes */
 
 @import url('https://fonts.googleapis.com/css2?family=Klee+One&display=swap');
@@ -31,7 +33,7 @@ background-color: var(--bg1);
 
 /* some elements aren't affected by * so have to add them explicitly */
 *, h4, .japanese, .english, .label {
- font-family: brw !important;
+ font-family: BR Wakaisho, brw !important;
 }
 
 
@@ -161,14 +163,6 @@ li.radical:hover {
  border-color: var(--accent) !important;
 }
 
-/*mobile (portrait mode) draw/radical buttons */
-/*#input_methods {
-  box-shadow: 0px 0px 20px black;
-  zoom: 90%;
-  margin:15px;
-  padding:5px;
-}*/
-
 /* manual fix for kanji animation */
 .kanji_play_button {
  background:none;
@@ -190,9 +184,13 @@ li.radical:hover {
 
 /* LAYOUT CHANGES */
 /* hide stuff to tidy up */
-header, #other_dictionaries, .kanji_light_block h4, .sentences_block h4, .names_block h4, .exact_block h4  {
+/*header, #other_dictionaries, .kanji_light_block h4, .sentences_block h4, .names_block h4, .exact_block h4  {
+ display:none;
+}*/
+header, #other_dictionaries, .kanji_light_block h4, .exact_block h4, .light-details_link  {
  display:none;
 }
+
 /* fix entire search bar to the top */
 .row.collapse {
  position:fixed;
@@ -204,6 +202,11 @@ header, #other_dictionaries, .kanji_light_block h4, .sentences_block h4, .names_
  /*background-color: var(--bg2);*/
  z-index:1;
  /*box-shadow: 0px 0px 20px black;*/
+}
+/* make its hitbox smaller */
+form.search  {
+  margin: 0px;
+  top: 12px;
 }
 /* fix overlap at the top when doing the previous thing */
 body {
@@ -220,6 +223,7 @@ body {
  max-width:unset;
  width:100%;
  order:2;
+ padding:0px;
 }
 #main_results .row {
   display:flex;
@@ -231,15 +235,17 @@ body {
  width:100%;
  margin:0px;
 }
-/* compact sentences and names with hover */
+/* move sentences and names to bottom */
 .sentences_block, .names_block {
   order:4;
+  margin-top:30px;
 }
 
 
 .kanji_light_block .entry { 
  width:100%;
- margin:5px;
+ margin: 0px 0px 0px 0px;
+ padding: 7px 0px 7px 0px;
 }
 .concept_light {
  margin: 15px 0px 15px 0px;
