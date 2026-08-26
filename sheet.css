@@ -1,5 +1,7 @@
 /* @import url('https://raw.githubusercontent.com/amenoko/ksjsndhxis/refs/heads/main/sheet.css') */
+/* @import url('https://amenoko.github.io/ksjsndhxis/sheet.css'); */
 
+body { zoom: 80%; }
 /* !important is necessary for stylus extension on mobile firefox for a lot of attributes */
 
 /* @import url('https://fonts.googleapis.com/css2?family=Klee+One&display=swap'); */
