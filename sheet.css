@@ -278,6 +278,9 @@ margin: 0px 0px 0px 100px;
 .modal_content {
   width:fit-content;
 }
+.reveal-modal.small.open {
+  top:unset;
+}
 .close-reveal-modal {
   display:none;
 }
