@@ -25,6 +25,7 @@ New Tegomin
 --accent: #81bfdc;
 --bg1: #1c1c22;
 --bg2: #202026;
+--bg3: #26262d;
 --fg1: #dddddf;
 --fg2: #88888c;
 background-color: var(--bg1);
@@ -35,7 +36,6 @@ background-color: var(--bg1);
 *, h4, .japanese, .english, .label {
 font-family: BR Wakaisho, brw !important;
 }
-
 
 body {
 background-color: var(--bg1);
@@ -111,7 +111,7 @@ border: solid 1px var(--accent);
 }
 
 /* border-radius for everyone */
-form.search .overlay, .f-dropdown, .color_theme_picker--choices, .panel, .fact, .radical, .kanji_strokes, #inflection_modal, #input_methods {
+form.search .overlay, .f-dropdown, .color_theme_picker--choices, .panel, .fact, .radical, .kanji_strokes, #inflection_modal, #input_methods, table.inflection_table {
 border-radius: 5px;
 }
 
@@ -269,16 +269,52 @@ visibility:visible !important;
 #inflection_modal {
 position:fixed !important;
 border:none;
-background-color:var(--bg2);
+background-color:rgba(0,0,0,0);
 padding:15px 0px 15px 0px;
 right:0px;
-box-shadow: 0px 0px 20px black;
+/* box-shadow: 0px 0px 20px black; */
+}
+.close-reveal-modal {
+  display:none;
+}
+.reveal-modal {box-shadow: none;}
+table.inflection_table caption {display:none;}
+table.inflection_table, table.inflection_table td {
+  visibility:visible;
+}
+table.inflection_table {
+  border: 1px solid var(--accent);
+  border-collapse:separate;
+  border-spacing:0px;
+  padding:0px;
+}
+table.inflection_table td {
+  padding:20px;
+}
+table.inflection_table tbody:nth-child(4) td {
+  color:var(--fg1);
+}
+table.inflection_table tbody:nth-child(4) tr:nth-child(odd) {
+  background-color: var(--bg1);
+}
+table.inflection_table tbody:nth-child(4) tr:nth-child(even) {
+  background-color: var(--bg2);
+}
+table.inflection_table tbody:nth-child(3) td:nth-child(n + 2) {
+  color: var(--fg1);
+  background-color: var(--bg2);
+}
+table.inflection_table tbody:nth-child(3) td {
+  background-color:var(--bg2);
+}
+/* increase font size of english and japanese separately */
+table.inflection_table tbody:nth-child(3) td, table.inflection_table td:nth-child(-n+1) {
+  font-size: 18px;
+}
+table.inflection_table tbody:nth-child(4) td:nth-child(n+2) {
+  font-size: 25px;
 }
 
-#inflection_modal * {
-background-color:inherit;
-color: var(--fg1);
-}
 
 /* have input methods icon always float bottom right (not just mobile mode) for convenience */
 #input_methods {
