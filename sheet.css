@@ -75,7 +75,7 @@ color:unset !important;
 }
 
 /* fix fg color of leftovers */
-input, svg, .result_label {
+input, svg, .result_label, .clear-icon {
 color: var(--fg1);
 fill: var(--fg1);
 }
