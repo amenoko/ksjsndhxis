@@ -31,8 +31,6 @@ background-color: var(--bg1);
 --gradient: linear-gradient(90deg, rgba(28,28,31,1) 0%, rgba(68,68,73,1) 50%, rgba(28,28,31,1) 100%);
 }
 
-:not(html,body) {transition: all 0.5s ease;}
-
 /* some elements aren't affected by * so have to add them explicitly */
 *, h4, .japanese, .english, .label {
 font-family: BR Wakaisho, brw !important;
