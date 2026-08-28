@@ -270,8 +270,13 @@ position:fixed !important;
 border:none;
 background-color:rgba(0,0,0,0);
 padding:15px 0px 15px 0px;
-right:0px;
 /* box-shadow: 0px 0px 20px black; */
+width:fit-content;
+top:unset;
+margin: 0px 0px 0px 100px;
+}
+.modal_content {
+  width:fit-content;
 }
 .close-reveal-modal {
   display:none;
@@ -312,12 +317,6 @@ table.inflection_table tbody:nth-child(3) td, table.inflection_table td:nth-chil
 }
 table.inflection_table tbody:nth-child(4) td:nth-child(n+2) {
   font-size: 25px;
-}
-#inflection_modal {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
 }
 
 
